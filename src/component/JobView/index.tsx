@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {Avatar, Button, Comment, Form, Input, InputRef, List, Modal, Select, Typography} from 'antd';
+import {Avatar, Button, Comment, Form, Input, List, Modal, Select, Typography} from 'antd';
 import {JobType, NoteType, Status, UserType} from '../../models/type';
-import {SearchOutlined} from '@ant-design/icons';
 import moment from "moment";
 import CommentList from "../CommentList";
 import {UserContext} from "../../App";
@@ -47,7 +46,6 @@ const JobView: React.FC<JobViewProps> = ({job, show, onClose}: JobViewProps) => 
                     {
                         id: form.notes.length + 1,
                         author: userContext.fullName,
-                        userId: userContext.userId,
                         avatar:
                             'https://joeschmoe.io/api/v1/random',
                         content:

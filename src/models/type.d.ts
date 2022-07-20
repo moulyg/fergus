@@ -12,7 +12,6 @@ export type JobType = {
 
 export type NoteType = {
     id: number;
-    userId: number;
     author: string;
     avatar: string;
     content: string;

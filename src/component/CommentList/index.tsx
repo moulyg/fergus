@@ -1,7 +1,6 @@
 import React from 'react';
-import {Comment, InputRef, List} from 'antd';
+import {Comment, List} from 'antd';
 import {NoteType} from '../../models/type';
-import {SearchOutlined} from '@ant-design/icons';
 import moment from "moment";
 
 type CommentListProps = {

@@ -15,8 +15,6 @@ type DataIndex = keyof JobType;
 
 
 const HomePage: React.FC = () => {
-    const [searchText, setSearchText] = useState<string>('');
-    const [searchedColumn, setSearchedColumn] = useState<string>('');
     const searchInput = useRef<InputRef>(null);
     const [sortedInfo, setSortedInfo] = useState<SorterResult<JobType>>({});
     const [dataSource, setDataSource] = useState<JobType[]>([]);
@@ -37,13 +35,10 @@ const HomePage: React.FC = () => {
         dataIndex: DataIndex,
     ) => {
         confirm();
-        setSearchText(selectedKeys[0]);
-        setSearchedColumn(dataIndex);
     };
 
     const handleReset = (clearFilters: () => void) => {
         clearFilters();
-        setSearchText('');
     };
 
     const handleChange: TableProps<JobType>['onChange'] = (pagination, filters, sorter) => {
@@ -188,7 +183,7 @@ const HomePage: React.FC = () => {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a onClick={() => setSelectedJob(record)}>View</a>
+                    <Button  type="link" onClick={() => setSelectedJob(record)}>View</Button>
                 </Space>
             ),
         },
